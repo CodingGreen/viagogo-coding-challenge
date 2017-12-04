@@ -9,7 +9,7 @@ public class RandomGenerator {
     Random randomnessGenerator = new Random();
 
     public int generateEventsNumber() {
-        return generateIntBetween(1, Configuration.maxEventNumbers());
+        return generateIntBetween(Configuration.minEventNumbers(), Configuration.maxEventNumbers());
     }
     
     public Event generateEvent(int id) {

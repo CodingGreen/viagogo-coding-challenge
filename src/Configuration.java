@@ -34,11 +34,19 @@ public class Configuration {
     }
     
     /**
+     * Made a presumption that at least 20 would be need to sufficiently populate world
+     * @return The minimum number of events that will be randomly generated.
+     */
+    public static int minEventNumbers() {
+        return 20;
+    }
+    
+    /**
      * Made a presumption that 20 would suffice.
      * @return The maximum number of events that will be randomly generated.
      */
     public static int maxEventNumbers() {
-        return 20;
+        return 50;
     }
 
     /**
