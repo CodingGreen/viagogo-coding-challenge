@@ -6,8 +6,8 @@ public class EventMap {
     private final Event[][] worldMap;
 
     public EventMap() {
-        Xrange = Configuration.getXAxisMaxRange() - Configuration.getXAxisMinRange();
-        Yrange = Configuration.getYAxisMaxRange() - Configuration.getYAxisMinRange();
+        Xrange = Configuration.getXAxisMaxRange() - Configuration.getXAxisMinRange() + 1;
+        Yrange = Configuration.getYAxisMaxRange() - Configuration.getYAxisMinRange() + 1;
         worldMap = new Event[Xrange][Yrange];
     }
     
