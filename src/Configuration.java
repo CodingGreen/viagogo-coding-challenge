@@ -1,6 +1,4 @@
 
-import java.util.Currency;
-
 /**
  * This class could be easily modified to source it's values from a proper
  * configuration file.
@@ -60,8 +58,12 @@ public class Configuration {
         return 150f;
     }
 
-    public static Currency defaultCurrency() {
-        return Currency.getInstance("USD");
+    public static char defaultCurrency() {
+        return '$';
+    }
+
+    public static int numOfClosestEvents() {
+        return 5;
     }
 
 }

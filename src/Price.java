@@ -1,16 +1,15 @@
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.Currency;
 
-public final class Price {
+public final class Price implements Comparable<Price> {
 
     private BigDecimal ammount;
-    private Currency currencyType;
+    private final char currencySymbol;
 
-    public Price(BigDecimal ammount, Currency currencyType) {
+    public Price(BigDecimal ammount, char currencySymbol) {
         setAmmount(ammount);
-        this.currencyType = currencyType;
+        this.currencySymbol = currencySymbol;
     }
 
     public BigDecimal getAmmount() {
@@ -25,13 +24,14 @@ public final class Price {
         this.ammount = ammount.setScale(2, RoundingMode.HALF_UP);
     }
 
-    public Currency getCurrencyType() {
-        return currencyType;
+    @Override
+    public String toString() {
+        return Character.toString(currencySymbol) + ammount;
     }
 
-    public void changeCurrencyType(Currency currencyType, BigDecimal newAmmount) {
-        this.currencyType = currencyType;
-        setAmmount(newAmmount);
+    @Override
+    public int compareTo(Price p) {
+        return ammount.compareTo(p.getAmmount());
     }
 
 }
