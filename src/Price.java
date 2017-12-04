@@ -4,6 +4,8 @@ import java.math.RoundingMode;
 
 public final class Price implements Comparable<Price> {
 
+    //Used BigDecimal to represent currency due to float and double precision issues.
+    //See: stackoverflow.com/questions/3730019
     private BigDecimal ammount;
     private final char currencySymbol;
 
