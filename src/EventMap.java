@@ -1,26 +1,24 @@
 
-public class EventMap {
-    
-    private final int Xrange;
-    private final int Yrange;
-    private final Event[][] worldMap;
+import java.util.Map;
 
-    public EventMap() {
-        Xrange = Configuration.getXAxisMaxRange() - Configuration.getXAxisMinRange() + 1;
-        Yrange = Configuration.getYAxisMaxRange() - Configuration.getYAxisMinRange() + 1;
-        worldMap = new Event[Xrange][Yrange];
+public class EventMap {
+
+    private final Map<Coordinate, Event> eventMap;
+
+    public EventMap(Map<Coordinate, Event> eventMap) {
+        this.eventMap = eventMap;
     }
-    
-    public void AddEvent(Event event, int x, int y) {
-        worldMap[xCoordinateToArrayIndex(x)][yCoordinateToArrayIndex(y)] = event;
+
+    /**
+     * Given x and y coordinates returns an ordered list of closest events
+     * (using Manhattan distance). The length of this list is determined by the
+     * Configuration class.
+     *
+     * @param x The x coordinate
+     * @param y The y coordinate
+     */
+    public void closestEvents(int x, int y) {
+        
     }
-    
-    private int xCoordinateToArrayIndex(int coordinate) {
-        return coordinate - Configuration.getXAxisMinRange();
-    }
-    
-    private int yCoordinateToArrayIndex(int coordinate) {
-        return coordinate - Configuration.getYAxisMinRange();
-    }
-    
+
 }

@@ -1,26 +1,35 @@
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class RandomGenerator {
 
     Random randomnessGenerator = new Random();
 
-    public int generateEventsNumber() {
-        return generateIntBetween(Configuration.minEventNumbers(), Configuration.maxEventNumbers());
+    public Map<Coordinate, Event> generateEvents() {
+        int numberOfEvents = generateIntBetween(Configuration.minEventNumbers(), Configuration.maxEventNumbers());
+        Map<Coordinate, Event> events = new HashMap<>(numberOfEvents);
+        Coordinate location;
+        for (int i = 0; i < numberOfEvents; i++) {
+            location = new Coordinate(generateXCoordinate(), generateYCoordinate());
+            events.put(location, generateEvent(i, location));
+        }
+        return events;
     }
-    
-    public Event generateEvent(int id) {
-        return new Event(id, generateTickets());
+
+    private Event generateEvent(int id, Coordinate location) {
+        return new Event(id, location, generateTickets());
     }
-    
-    public int generateXCoordinate() {
+
+    private int generateXCoordinate() {
         return generateIntBetween(Configuration.getXAxisMinRange(), Configuration.getXAxisMaxRange());
     }
-    
-    public int generateYCoordinate() {
+
+    private int generateYCoordinate() {
         return generateIntBetween(Configuration.getYAxisMinRange(), Configuration.getYAxisMaxRange());
     }
 
