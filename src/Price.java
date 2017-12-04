@@ -1,5 +1,7 @@
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.Currency;
 
 
@@ -21,7 +23,8 @@ public final class Price {
         if (ammount.compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("Price ammount must be positive and non-zero.");
         }
-        this.ammount = ammount;
+        //Rounds to 2dp represent currency.
+        this.ammount = ammount.setScale(2, RoundingMode.HALF_UP);
     }
 
     public Currency getCurrencyType() {
