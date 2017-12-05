@@ -68,7 +68,7 @@ public class Coordinate {
         }
     }
 
-    private static class CoordinateFormatException extends IllegalArgumentException {
+    public static class CoordinateFormatException extends IllegalArgumentException {
 
         public CoordinateFormatException(String s) {
             super(s);

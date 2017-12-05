@@ -62,6 +62,10 @@ public class ClosestEventsProgram {
             } catch (IOException ex) {
                 output.println("There was an error please try again.");
                 retry = true;
+            } catch (Coordinate.CoordinateFormatException ex) {
+                output.println(ex.getMessage());
+                output.println("Please try again.");
+                retry = true;
             }
         } while (retry);
 
