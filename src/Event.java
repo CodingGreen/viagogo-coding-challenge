@@ -13,8 +13,17 @@ public class Event {
         this.tickets = tickets;
     }
     
+    /**
+     * Given a location returns the Manhattan Distance to this event.
+     * @param location
+     * @return
+     */
     public int manhattanDistanceFrom(Coordinate location) {
         return this.location.manhattanDistanceFrom(location);
+    }
+    
+    public boolean hasTickets() {
+        return !tickets.isEmpty();
     }
     
     public Ticket getCheapestTicket() {

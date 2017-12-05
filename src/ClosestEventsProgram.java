@@ -45,8 +45,14 @@ public class ClosestEventsProgram {
         } while (retry);
         List<Event> events = eventMap.closestEvents(location);
         output.println("Closest Events to " + location + ":");
+        String ticketInfo;
         for (Event event : events) {
-            output.println(event + " - " + event.getCheapestTicket().getPrice()
+            if (event.hasTickets()) {
+                ticketInfo = event.getCheapestTicket().getPrice().toString();
+            } else {
+                ticketInfo = "No tickets";
+            }
+            output.println(event + " - " + ticketInfo
                 + ", Distance " + event.manhattanDistanceFrom(location));
         }
     }
