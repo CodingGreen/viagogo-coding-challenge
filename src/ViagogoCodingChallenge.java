@@ -4,7 +4,7 @@
  * Main entry class.
  * @author Adam
  */
-public class ViagogoCodingChallange {
+public class ViagogoCodingChallenge {
 
     /**
      * Main method.
