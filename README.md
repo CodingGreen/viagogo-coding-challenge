@@ -17,3 +17,9 @@ java ViagogoCodingChallenge
 ```
 
 Or simply load the code into an IDE of your choice.
+
+## Documentation
+
+You can view the brief documentation here:
+
+https://grinenx.github.io/viagogo-coding-challenge/dist/javadoc/
