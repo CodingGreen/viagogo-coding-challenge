@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * A class to represent the world
+ * A class to represent the world.
  *
  * @author Adam
  */
@@ -12,6 +12,8 @@ public class EventMap {
 
     private final Coordinate topLeftBound;
     private final Coordinate bottomRightBound;
+    //If I needed to store multiple events in the same location this map would
+    //need to have a list of events for each location.
     private final Map<Coordinate, Event> eventMap;
 
     /**
