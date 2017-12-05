@@ -50,7 +50,7 @@ public class Configuration {
 
     /**
      * Made a presumption that at least 20 would be need to sufficiently
-     * populate world
+     * populate world.
      *
      * @return The minimum number of events that will be randomly generated.
      */
