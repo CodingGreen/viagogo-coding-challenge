@@ -36,7 +36,7 @@ public class RandomGenerator {
     private List<Ticket> generateTickets() {
         List<Ticket> generatedList = new ArrayList<>();
         int numOfTickets = generateIntBetween(0, Configuration.maxTicketNumbers());
-        for (int i = 0; i < numOfTickets; i++) {
+        for (int i = 1; i <= numOfTickets; i++) {
             generatedList.add(new Ticket(generatePrice()));
         }
         return generatedList;
