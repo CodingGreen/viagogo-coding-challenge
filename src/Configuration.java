@@ -2,21 +2,39 @@
 /**
  * This class could be easily modified to source it's values from a proper
  * configuration file.
+ *
+ * @author Adam
  */
 public class Configuration {
 
+    /**
+     * 
+     * @return The minimum range of the Y axis of the world.
+     */
     public static int getYAxisMinRange() {
         return -10;
     }
 
+    /**
+     *
+     * @return The maximum range of the Y axis of the world.
+     */
     public static int getYAxisMaxRange() {
         return 10;
     }
 
+    /**
+     *
+     * @return The minimum range of the X axis of the world.
+     */
     public static int getXAxisMinRange() {
         return -10;
     }
 
+    /**
+     *
+     * @return The maximum range of the X axis of the world.
+     */
     public static int getXAxisMaxRange() {
         return 10;
     }
@@ -58,10 +76,18 @@ public class Configuration {
         return 150f;
     }
 
+    /**
+     *
+     * @return The default currency symbol.
+     */
     public static char defaultCurrency() {
         return '$';
     }
 
+    /**
+     *
+     * @return The number of events given when looking for closest events.
+     */
     public static int numOfClosestEvents() {
         return 5;
     }

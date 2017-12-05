@@ -6,18 +6,32 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * A class to generate Randomly generate the world objects
+ *
+ * @author Adam
+ */
 public class RandomGenerator {
 
     Random randomnessGenerator = new Random();
 
+    /**
+     * Generates a list of event and all the objects associated. These are
+     * stored in a map so they can be returned by location quickly.
+     *
+     * @return A map of coordinates to events.
+     */
     public Map<Coordinate, Event> generateEvents() {
+        
         int numberOfEvents = generateIntBetween(Configuration.minEventNumbers(), Configuration.maxEventNumbers());
         Map<Coordinate, Event> events = new HashMap<>(numberOfEvents);
         Coordinate location;
+        
         for (int i = 0; i < numberOfEvents; i++) {
             location = new Coordinate(generateXCoordinate(), generateYCoordinate());
             events.put(location, generateEvent(i, location));
         }
+        
         return events;
     }
 
@@ -36,9 +50,11 @@ public class RandomGenerator {
     private List<Ticket> generateTickets() {
         List<Ticket> generatedList = new ArrayList<>();
         int numOfTickets = generateIntBetween(0, Configuration.maxTicketNumbers());
+        
         for (int i = 1; i <= numOfTickets; i++) {
             generatedList.add(new Ticket(generatePrice()));
         }
+        
         return generatedList;
     }
 
